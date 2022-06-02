@@ -16,7 +16,7 @@ class Hangman
     ]
   end
 
-  def teaser
+  def print_teaser
     word_teaser = ""
 
     @word.first.size.times do
@@ -25,12 +25,17 @@ class Hangman
 
     puts word_teaser
 
+  def make_guess
+    puts "Enter a letter"
+    guess = gets.chomp
+  end
+
   # ask user for letter
   def begin
     puts "New game started... your word is #{ @word.first.size} characters long"
+    print_teaser
     puts "your clue is #{ @word.last }"
-    puts "Enter a new letter"
-    guess = gets.chomp
+   
     
   end
 end
