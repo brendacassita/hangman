@@ -18,13 +18,20 @@ class Hangman
 
   # ask user for letter
   def begin
-    puts "New game started... your clue is #{ @word.last}"
+    puts "New game started... your word is #{ @word.first.size} characters long"
+    word_teaser = ""
+
+    @word.first.size.times do
+      word_teaser += "_ "
+    end
+
+    puts word_teaser
+    puts "your clue is #{ @word.last }"
     puts "Enter a new letter"
     guess = gets.chomp
-    puts "You guess #{guess}" 
+    
   end
-
 end
 
-game = Hangman.New
+game = Hangman.new
 game.begin
